@@ -32,7 +32,7 @@ while (true) {
      
      
      if (opciones === "1") {
-        let cantidad = alert (empleados.length)
+        let cantidad = alert (`La cantidad de empledados de la empresa son actualmente: \n ${(empleados.length)}`)
      } else if (opciones === "2") {
         console.table (empleados)
      } else if (opciones === "3") {
@@ -41,7 +41,10 @@ while (true) {
       miSistema.aumentarSueldos (empleados)
      } else if (opciones === "5") {
       miSistema.ordenarPorAntiguedad(empleados)
-     } else {
+     } else if (opciones === "6") {
+      miSistema.agregarEmpleado (empleados)
+     }
+     else {
         alert ("La opcion que ingresaste es incorrecta")
      }
 
