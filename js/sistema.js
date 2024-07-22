@@ -4,7 +4,7 @@ class Sistema {
 		this.empleados = empleados
 	}
 
-	buscarEmpleados() {
+	buscarEmpleados () {
 		let nombreIngresado = prompt('Ingrese el Nombre y apellido (en ese orden) del empleado que quiere buscar').toUpperCase()
 
 		let empleadoEncontrado = this.empleados.find(function(empleado) {
@@ -22,12 +22,17 @@ class Sistema {
 		}
 	}
 
-	aumentarSueldos (empleados) {
+	aumentarSueldos () {
 		let solicitarPorcentaje = parseFloat(prompt("Ingrese el porcentaje a aumentar"));
 		empleados.forEach(function(empleado) {
 			empleado.sueldo = ((empleado.sueldo * solicitarPorcentaje) / 100) + empleado.sueldo;
 		});
-		console.table (empleados)	
-	
+		console.table (empleados);	
 	}
-}
+
+	ordenarPorAntiguedad () {
+		empleados.sort((a, b) => b.antiguedad - a.antiguedad);
+		return console.table (empleados);
+	}
+
+}	

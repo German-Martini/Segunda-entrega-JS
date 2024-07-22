@@ -3,15 +3,15 @@ class Empleado {
       this.nombre = nombre;
       this.edad = Math.ceil((Math.random() * (55 - 18)) + 18);
       this.sueldo = sueldo;
-      this.antiguadad = antiguedad;
+      this.antiguedad = antiguedad;
    }
 }  
 
 const empleados = [
-   new Empleado("Carlos Garcia", 48000, 20),
-   new Empleado("Laura Martinez", 65000, 10),
-   new Empleado("Pedro Gomez", 38000, 5),
-   new Empleado("Sofia Ramirez", 52000, 3),
+   new Empleado("Carlos Garcia", 48000, 10),
+   new Empleado("Laura Martinez", 65000, 3),
+   new Empleado("Pedro Gomez", 38000, 8),
+   new Empleado("Sofia Ramirez", 52000, 20),
 ]
 
 
@@ -26,8 +26,9 @@ while (true) {
      1) Saber la cantidad de empleados actuales
      2) Listar todos los empleados
      3) Buscar empleados
-     4) Agragar un nuevo empleado
-     5) Aumentar los sueldos`)
+     4) Aumentar los sueldos 
+     5) Ordenar empleados por años antiguedad
+     6) Agragar un nuevo empleado`)
      
      
      if (opciones === "1") {
@@ -38,9 +39,9 @@ while (true) {
         miSistema.buscarEmpleados(empleados)
      } else if (opciones === "4") {
       miSistema.aumentarSueldos (empleados)
-     }
-     
-     else {
+     } else if (opciones === "5") {
+      miSistema.ordenarPorAntiguedad(empleados)
+     } else {
         alert ("La opcion que ingresaste es incorrecta")
      }
 
