@@ -25,10 +25,16 @@ class Sistema {
 
 	aumentarSueldos () {
 		let solicitarPorcentaje = parseFloat(prompt("Ingrese el porcentaje a aumentar"));
-		empleados.forEach(function(empleado) {
+		
+		if (isNaN(solicitarPorcentaje)) {
+			alert(`Por favor ingrese un porcentaje valido`);
+		} else {
+			empleados.forEach(function(empleado) {
 			empleado.sueldo = ((empleado.sueldo * solicitarPorcentaje) / 100) + empleado.sueldo;
-		});
-		console.table (empleados);	
+			})
+			console.table (empleados);	
+		}
+		
 	}
 
 	ordenarPorAntiguedad () {
@@ -39,7 +45,7 @@ class Sistema {
 	}
 
 	agregarEmpleado () {
-		const nombre = prompt("Ingrese el Nombre y Apellido del nuevo empleado");
+		let nombre = prompt("Ingrese el Nombre y Apellido del nuevo empleado");
 		let sueldo = parseInt(prompt("Ingrese el sueldo del nuevo empleado"));
 		let antiguedad = parseInt(prompt("Ingrese los años de antiguedad"));
 		
@@ -51,7 +57,6 @@ class Sistema {
 			this.empleados.push(new Empleado(nombre, sueldo, antiguedad))
 		console.table(empleados);
 		}
-
 	}
 
 }	
